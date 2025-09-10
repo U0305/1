@@ -13,7 +13,7 @@
     <img class="logo" alt="POTEPAN CAMP ロゴ"
       src="https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/header-logo.png">
 
-    <!-- ヘッダー内ドロワー（スマホで展開）。PCでは通常の横並び -->
+   
     <div class="nav-cta" id="header-drawer">
       <nav class="nav">
         <ul>
@@ -27,7 +27,7 @@
       <div class="cta"><a class="btn" href="#">無料カウンセリング</a></div>
     </div>
 
-    <!-- ハンバーガー（スマホ表示） -->
+   
     <button class="burger" type="button" aria-label="メニュー" aria-controls="header-drawer" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -35,7 +35,7 @@
 </header>
 
 <section class="FirstView">
-  <!-- 背景分割（PC用） -->
+  
   <img class="FirstView__bg FirstView__bg--left"
     src="https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/left-rectangle.svg"
     alt="left-rectangle">
@@ -49,7 +49,7 @@
     src="https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/right-rectangle.svg"
     alt="right-rectangle">
 
-  <!-- モバイル用の合成画像 -->
+ 
   <img class="FirstView__whole" aria-hidden="true"
     src="https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/whole-visual.webp"
     alt="">
@@ -68,7 +68,7 @@
 </section>
 
 <script>
-/* ハンバーガー開閉（ヘッダー内ドロワー） */
+
 (function(){
   var header = document.querySelector('header');
   var btn    = document.querySelector('.burger');
@@ -80,7 +80,7 @@
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 
-  // ドロワー外クリックで閉じる
+  
   document.addEventListener('click', function(e){
     if(!header.classList.contains('is-open')) return;
     if(!drawer.contains(e.target) && !btn.contains(e.target)){
@@ -89,7 +89,7 @@
     }
   });
 
-  // Escで閉じる
+
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape' && header.classList.contains('is-open')){
       header.classList.remove('is-open');

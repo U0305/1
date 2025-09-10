@@ -1,10 +1,10 @@
-/* ====== リセット／共通 ====== */
+
 html,body{margin:0;padding:0}
 *,*::before,*::after{box-sizing:border-box}
 img{display:block;line-height:0}
 .FirstView{line-height:0}
 
-/* ====== ヘッダー ====== */
+
 header{
   background:#fff;
   height:70px;
@@ -14,7 +14,7 @@ header{
 .header-container{display:flex;justify-content:space-between;align-items:center;padding:23px 35px}
 .logo{height:20px}
 
-/* PCナビ（行間だけ緩和。レイアウトは現状維持） */
+
 .nav-cta{display:flex;align-items:center}
 .nav ul{display:flex;list-style:none;margin:0;padding:0}
 .nav li{margin:0 23px;text-align:center}
@@ -29,7 +29,7 @@ header{
 .cta{margin-left:20px}
 .cta .btn{background:#F79214;color:#fff;padding:12px 20px;border-radius:20px;text-decoration:none;font-weight:700;font-size:11px;letter-spacing:.1em}
 
-/* ハンバーガー（スマホで表示） */
+
 .burger{
   display:none;
   -webkit-appearance:none; appearance:none;
@@ -47,48 +47,47 @@ header.is-open .burger span:nth-child(1){ top:21px; transform:rotate(45deg) }
 header.is-open .burger span:nth-child(2){ opacity:0 }
 header.is-open .burger span:nth-child(3){ top:21px; transform:rotate(-45deg) }
 
-/* ====== 変数（PC初期値） ====== */
+
 :root{
   --container-pt: 219px;
 
-  /* 背景装飾のサイズ */
+  
   --leftTri-h: 41.5%;
   --rightTri-h: 50%;
 
-  /* 斜めライン */
+
   --line-w: 34.7%;
   --line-left: 12.7%;
   --line-top: 12.5%;
 
-  /* メイン画像（人物） */
+ 
   --main-w: 51%;
   --main-right: 0%;
   --main-top: -10.3%;
 
-  /* テキスト（PC） */
+  
   --copy-w: 42%;
   --copy-top: 56.3%;
-  --copy-ml: 6%;          /* PCで“少し右へ”寄せる量（%） */
+  --copy-ml: 6%;          
   --h1-size: 42px;
   --h1-lh: 1.52;
 
-  /* バッジ（PC） */
+ 
   --badge-size: 205px;
   --badge-x: 50.7%;
   --badge-y: 32%;
 
-  /* メインCTA */
+  
   --btn-fz: 16px;
   --btn-py: 20px;
   --btn-px: 120px;
 
-  /* ===== スマホ用の“数値調整”変数 ===== */
-  --m-badge-top: -20px;   /* バッジの縦位置（px） */
-  --m-badge-right: 21%;  /* 右端からの距離（px） */
-  --m-badge-size: 120px;  /* バッジのサイズ（px） */
-}
+ 
+  --m-badge-top: -20px;   
+  --m-badge-right: 21%;  
+  --m-badge-size: 120px;  
 
-/* ====== ファーストビュー（PC基準） ====== */
+
 section.FirstView{
   position:relative;
   width:100%;
@@ -97,7 +96,7 @@ section.FirstView{
   background:#fff;
   overflow:hidden;
 }
-.FirstView__whole{display:none} /* モバイルで使用 */
+.FirstView__whole{display:none} 
 .FirstView__bg{position:absolute;display:block;pointer-events:none}
 .FirstView__bg--left,
 .FirstView__bg--right{height:100%;width:auto}
@@ -118,7 +117,7 @@ section.FirstView{
   width:var(--main-w); height:auto; object-fit:cover; z-index:3;
 }
 
-/* ★PCテキスト：装飾より前面に（z-index:5）＆少し右へ（margin-left） */
+
 .FirstView__copy{
   position:relative; z-index:5;
   transform:none; max-width:var(--copy-w);
@@ -141,7 +140,7 @@ section.FirstView{
   width:var(--badge-size); height:auto; z-index:6; pointer-events:none;
 }
 
-/* コンテナ（PC） */
+
 .FirstView__container{
   max-width:1140px;
   margin-left:auto; margin-right:auto;
@@ -149,19 +148,19 @@ section.FirstView{
   padding-top:var(--container-pt);
 }
 
-/* 1280px未満：高さ調整（任意） */
+
 @media (max-width:1280px){
   section.FirstView{height:540px}
 }
 
-/* 1080px以下：横余白を16pxに */
+
 @media (max-width:1080px){
   .FirstView__container{
     max-width:none; padding-left:16px; padding-right:16px;
   }
 }
 
-/* ====== タブレット ====== */
+
 @media (max-width:1200px){
   :root{
     --h1-size:36px;
@@ -174,9 +173,9 @@ section.FirstView{
   }
 }
 
-/* ====== スマホ（ヘッダー内ドロワー＋縦並び） ====== */
+
 @media (max-width:768px){
-  /* ヘッダー（ドロワー） */
+ 
   .header-container{padding:13px 16px}
   .burger{display:block}
   #header-drawer{
@@ -194,13 +193,13 @@ section.FirstView{
   .cta{margin-left:0}
   .cta .btn{display:block;width:100%;text-align:center;font-size:16px;padding:14px 18px;border-radius:9999px}
 
-  /* FVは画像 → テキスト。バッジは“数値で”右側に絶対配置 */
+  
   section.FirstView{height:auto;min-height:0;padding:0;background:#fff;overflow:visible}
   .FirstView__bg--left,.FirstView__bg--right,.FirstView__bg--line,.FirstView__main{display:none !important}
   .FirstView__whole{display:block !important;width:100%;height:auto}
 
   .FirstView__container{
-    position:relative;                      /* バッジの基準 */
+    position:relative;                     
     display:block;
     max-width:none; padding:0 16px 28px; margin:0 auto;
   }
@@ -208,24 +207,24 @@ section.FirstView{
   .FirstView__copy{
     position:static; transform:none; max-width:92%;
     margin:0 16px; text-align:left; color:#222; line-height:1.35;
-    padding-right:calc(var(--m-badge-size) + 20px); /* バッジ分の逃げ */
+    padding-right:calc(var(--m-badge-size) + 20px);
   }
   .FirstView__copy h1{font-size:clamp(22px,6.2vw,28px);line-height:1.35;margin:8px 0 12px;font-weight:800}
   .btn-main{font-size:15px;padding:14px 22px;border-radius:9999px}
   .FirstView__note{font-size:11px;line-height:1.5;margin-right:16px}
 
-  /* ★left を無効化→ right が確実に効く */
+
   .FirstView__badge{
     position:absolute; z-index:6;
-    left:auto !important;                   /* ← 重要 */
-    right:var(--m-badge-right);             /* 右端からの距離（px）*/
-    top:var(--m-badge-top);                 /* 縦位置（px）*/
+    left:auto !important;                  
+    right:var(--m-badge-right);            
+    top:var(--m-badge-top);                 
     width:var(--m-badge-size); height:auto;
     transform:none; pointer-events:none;
   }
 }
 
-/* 超小型端末：数値の既定も上書き可能 */
+
 @media (max-width:360px){
   :root{
     --m-badge-size: 96px;
@@ -235,7 +234,7 @@ section.FirstView{
   .btn-main{font-size:14px;padding:12px 18px}
 }
 
-/* ちょい演出（任意） */
+
 :where(.btn-main,.cta .btn,.nav li a){
   transition:background-color .2s ease,color .2s ease,
              box-shadow .2s ease,transform .1s ease,opacity .2s ease;
